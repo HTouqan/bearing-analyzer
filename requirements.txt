@@ -1,0 +1,4 @@
+pypylon>=3.0
+opencv-python>=4.5
+pyserial>=3.5
+Pillow>=9.0
