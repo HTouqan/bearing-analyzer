@@ -2,7 +2,7 @@
 
 An automated bearing inspection rig: a stepper-motor stage rotates a ball bearing in front of a Basler industrial vision camera, the operator GUI drives the capture cycle, and a labelled pattern-recognition layer processes the resulting images.
 
-Originally built in 2023–2024 as a six-month industrial engineering internship deliverable. Published here in white-label form — branding, captured data, and operational logs have been removed; the system architecture and code are intact.
+Originally built over 2023 and 2024 as a six-month industrial engineering internship deliverable. Published here in white-label form: the branding, captured data, and operational logs have been removed, and the system architecture and code are intact.
 
 ---
 
@@ -12,7 +12,7 @@ Originally built in 2023–2024 as a six-month industrial engineering internship
 2. The motor controller (`CamMotor3.py`) communicates with a TMC stepper driver over a serial link, configures the driver into **StealthChop** mode for quiet, low-vibration operation, and rotates the bearing stage through a configurable sequence of angular positions.
 3. At each position the GUI triggers the Basler camera via the `pypylon` library and stores the resulting frame in a per-run directory under `Bearings/`.
 4. After capture, `labelledPAN.py` runs the labelled pattern-analysis pipeline over the captured frames and writes results back to the GUI.
-5. Every action — GUI events, motor commands, camera triggers, errors — is timestamped and written to `logs.txt` so the operator can reconstruct a run.
+5. Every action (GUI events, motor commands, camera triggers, errors) is timestamped and written to `logs.txt` so the operator can reconstruct a run.
 
 The end result is an unattended capture cycle for a bearing that previously required manual operator intervention at each rotation step.
 
@@ -109,7 +109,7 @@ The 800-line Tkinter GUI, the 180-line motor / camera controller, and the 400-li
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](LICENSE).
 
 ---
 
